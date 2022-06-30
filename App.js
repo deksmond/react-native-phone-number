@@ -1737,7 +1737,10 @@ const App = () => {
           <TouchableOpacity>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
               <Text style={{ paddingBottom: 15, paddingRight: 30 }}>{post.flag}</Text>
-              <Text style={{ flex: 1, fontSize: 18, fontWeight: '500', paddingBottom: 15 }}>{post.name}</Text>
+              <Text style={{ flex: 1, fontSize: 16, fontWeight: '500', paddingBottom: 15 }}>{post.name}</Text>
+              <View style={{ flexDirection: 'row' }}>
+                <Text style={{ paddingBottom: 15, fontWeight: '500' }}>{post.dialCode}</Text>
+              </View>
             </View>
           </TouchableOpacity>
         </View>
@@ -1753,9 +1756,11 @@ const App = () => {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity onPress={() => this.RBSheet.open()}>
-            <Text style={{ marginTop: 7 }}><CountryFlag isoCode="NG" size={20} /></Text>
-            <Text style={{ marginTop: 15, fontSize: 16, paddingLeft: 3, paddingRight: 10 }}>+234
-            </Text>
+            <View style={{ marginBottom: 7 }}>
+              <Text style={{ marginTop: 7 }}><CountryFlag isoCode="NG" size={20} /></Text>
+              <Text style={{ marginTop: 6, marginLeft: -4, fontSize: 16 }}>+234
+              </Text>
+            </View>
           </TouchableOpacity>
           <View style={styles.numberInput}>
             <TextInput
@@ -1787,7 +1792,7 @@ const App = () => {
         }}
       >
         <View>
-          <Text style={{ fontSize: 17, fontWeight: '700', paddingTop: 20, textAlign: 'center', justifyContent: 'center' }}>Select country</Text>
+          <Text style={{ fontSize: 17, fontWeight: '700', paddingTop: 20, textAlign: 'center', justifyContent: 'center' }}>Select your country and code</Text>
         </View>
         <View style={{ borderBottomWidth: StyleSheet.hairlineWidth, marginTop: 10 }}></View>
 
