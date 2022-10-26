@@ -1757,9 +1757,9 @@ const App = () => {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity onPress={() => this.RBSheet.open()}>
-            <View style={{ flexDirection: 'row', marginBottom: 7 }}>
-              <Text style={{ marginTop: 20, marginRight: 15 }}><CountryFlag isoCode="NG" size={14} /></Text>
-              <Icon name='chevron-down-outline' size={16}  />
+            <View style={{ flexDirection: 'row', marginTop: 12, marginRight: 10 }}>
+              <Text style={{ marginRight: 10, marginTop: 10 }}><CountryFlag isoCode="NG" size={14} /></Text>
+              <Icon name='ios-arrow-down' size={26} />             
               {/*<Text style={{ marginTop: 6, marginLeft: -4, fontSize: 16 }}>+234
               </Text>*/}
             </View>
@@ -1794,7 +1794,7 @@ const App = () => {
         }}
       >
         <View>
-          <Text style={{ fontSize: 17, fontWeight: '700', paddingTop: 20, textAlign: 'center', justifyContent: 'center' }}>Select your country and code</Text>
+          <Text style={{ fontSize: 17, fontWeight: '700', paddingTop: 20, textAlign: 'center', justifyContent: 'center' }}>Select your country</Text>
         </View>
         <View style={{ borderBottomWidth: StyleSheet.hairlineWidth, marginTop: 10 }}></View>
 
