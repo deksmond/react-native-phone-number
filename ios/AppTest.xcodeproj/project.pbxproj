@@ -44,6 +44,7 @@
 		CE9B78FFC4F8BB77C5993296 /* libPods-AppTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97A32A6F024E2604F787E45 /* libPods-AppTest-AppTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTest-AppTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F7D332462909734D0074DDE7 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F7D332452909730C0074DDE7 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* AppTest */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AppTestTests */,
@@ -145,8 +147,15 @@
 				A936D7B52118D021DF08F82B /* Pods-AppTest-AppTestTests.debug.xcconfig */,
 				18648B058172C38A9A4C1947 /* Pods-AppTest-AppTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7D332452909730C0074DDE7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F7D332462909734D0074DDE7 /* Ionicons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

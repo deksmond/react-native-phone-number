@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import CountryFlag from 'react-native-country-flag';
+import Icon from 'react-native-ionicons';
 
 info = [
   {
@@ -1756,15 +1757,16 @@ const App = () => {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity onPress={() => this.RBSheet.open()}>
-            <View style={{ marginBottom: 7 }}>
-              <Text style={{ marginTop: 7 }}><CountryFlag isoCode="NG" size={20} /></Text>
-              <Text style={{ marginTop: 6, marginLeft: -4, fontSize: 16 }}>+234
-              </Text>
+            <View style={{ flexDirection: 'row', marginBottom: 7 }}>
+              <Text style={{ marginTop: 20, marginRight: 15 }}><CountryFlag isoCode="NG" size={14} /></Text>
+              <Icon name='chevron-down-outline' size={16}  />
+              {/*<Text style={{ marginTop: 6, marginLeft: -4, fontSize: 16 }}>+234
+              </Text>*/}
             </View>
           </TouchableOpacity>
           <View style={styles.numberInput}>
             <TextInput
-              keyboardType={'number-pad'}
+              keyboardType={'phone-pad'}
               autocapitalize='none'
               maxLength={15}
               style={{ fontSize: 16 }}
