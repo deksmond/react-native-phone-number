@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import CountryFlag from 'react-native-country-flag';
@@ -1732,7 +1732,21 @@ info = [
 
 const App = () => {
 
+  constructor (props) {
+    super(props)
+    this.state = {
+      input: ''
+    }
+  }
+
+  handleInputChange = (text) => {
+    this.setState({input: text})
+  }
+
   renderPost = post => {
+
+    const {input} = this.state
+
     return (
       <View style={{ flex: 1, marginHorizontal: 18 }}>
         <View style={{ flexDirection: 'column' }}>
@@ -1771,6 +1785,8 @@ const App = () => {
               autocapitalize='none'
               maxLength={15}
               style={{ fontSize: 16 }}
+              onChangeText={this.handleInputChange}
+              value={input}
             />
           </View>
           <TouchableOpacity style={{ flex: 2 }}>
@@ -1803,9 +1819,6 @@ const App = () => {
           <FlatList
             data={info}
             renderItem={({ item }) => this.renderPost(item)}
-            //The prop below helps to approximate the size of items before rendering
-            estimatedItemSize={44}
-            // This prop below is necessary to uniqueky identify ghe elements in the list
             keyExtractor={item => item.id}
           />
         </View>
