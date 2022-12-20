@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList } from 'r
 import RBSheet from 'react-native-raw-bottom-sheet';
 import CountryFlag from 'react-native-country-flag';
 import Icon from 'react-native-ionicons';
+//import { FlashList } from '@shopify/flash-list';
 
 info = [
   {
@@ -1802,6 +1803,9 @@ const App = () => {
           <FlatList
             data={info}
             renderItem={({ item }) => this.renderPost(item)}
+            //The prop below helps to approximate the size of items before rendering
+            estimatedItemSize={44}
+            // This prop below is necessary to uniqueky identify ghe elements in the list
             keyExtractor={item => item.id}
           />
         </View>
