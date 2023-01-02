@@ -1732,21 +1732,7 @@ info = [
 
 const App = () => {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      input: ''
-    }
-  }
-
-  handleInputChange = (text) => {
-    this.setState({input: text})
-  }
-
   renderPost = post => {
-
-    const {input} = this.state
-
     return (
       <View style={{ flex: 1, marginHorizontal: 18 }}>
         <View style={{ flexDirection: 'column' }}>
@@ -1754,9 +1740,7 @@ const App = () => {
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
               <Text style={{ paddingBottom: 15, paddingRight: 30 }}>{post.flag}</Text>
               <Text style={{ flex: 1, fontSize: 16, fontWeight: '500', paddingBottom: 15 }}>{post.name}</Text>
-              <View style={{ flexDirection: 'row' }}>
-                <Text style={{ paddingBottom: 15, fontWeight: '500' }}>{post.dialCode}</Text>
-              </View>
+              <Text style={{ paddingBottom: 15, fontWeight: '500' }}>{post.dialCode}</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -1766,27 +1750,21 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <View style={{ marginHorizontal: 15, marginTop: 10, marginBottom: 10 }}>
-        <View style={{ paddingTop: 20 }}>
-          <Text style={{ paddingBottom: 30, fontSize: 24, fontWeight: "500" }}>Phone number</Text>
-        </View>
+      <View style={{ marginHorizontal: 15 }}>
+        <Text style={{ paddingBottom: 30, fontSize: 24, fontWeight: "500" }}>Phone number</Text>
         <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity onPress={() => this.RBSheet.open()}>
-            <View style={{ flexDirection: 'row', marginTop: 12, marginRight: 10 }}>
-              <Text style={{ marginRight: 10, marginTop: 10 }}><CountryFlag isoCode="NG" size={14} /></Text>
-              <Icon name='ios-arrow-down' size={26} />             
-              {/*<Text style={{ marginTop: 6, marginLeft: -4, fontSize: 16 }}>+234
-              </Text>*/}
-            </View>
-          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', marginTop: 12, marginRight: 10 }}>
+            <Text style={{ marginRight: 10, marginTop: 10 }}>{<CountryFlag isoCode="NG" size={14} />}</Text>
+            <TouchableOpacity onPress={() => this.RBSheet.open()}>
+              <Icon name='ios-arrow-down' size={26} />
+            </TouchableOpacity>
+          </View>
           <View style={styles.numberInput}>
             <TextInput
               keyboardType={'phone-pad'}
               autocapitalize='none'
               maxLength={15}
               style={{ fontSize: 16 }}
-              onChangeText={this.handleInputChange}
-              value={input}
             />
           </View>
           <TouchableOpacity style={{ flex: 2 }}>
