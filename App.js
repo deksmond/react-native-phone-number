@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList, Platform } from 'react-native';
 import info from './info';
 import CountryFlag from 'react-native-country-flag';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import Icon from 'react-native-ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 //import { FlashList } from '@shopify/flash-list';
 
 const App = () => {
@@ -32,7 +32,7 @@ const App = () => {
           <View style={{ flexDirection: 'row', marginTop: 12, marginRight: 10 }}>
             <Text style={{ marginRight: 10, marginTop: 10 }}>{<CountryFlag isoCode="NG" size={14} />}</Text>
             <TouchableOpacity onPress={() => this.RBSheet.open()}>
-              <Icon name='ios-arrow-down' size={26} />
+              <Icon name='chevron-down-outline' size={26} />
             </TouchableOpacity>
           </View>
           <View style={styles.numberInput}>
