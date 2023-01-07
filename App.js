@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList, Platform } from 'react-native';
 import info from './info';
 import CountryFlag from 'react-native-country-flag';
@@ -6,13 +6,23 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import Icon from 'react-native-vector-icons/Ionicons';
 //import { FlashList } from '@shopify/flash-list';
 
-const App = () => {
+function App () {
+
+  const [currentFlag, setCurrentFlag] = useState(() => {
+    return <CountryFlag isoCode="NG" size={20} />
+  });
+
+  function changeCurrentFlag(){
+    for(let i = 0; i <= info.length; i++ ){
+      setCurrentFlag(info[i].flag)
+    }
+  }
 
   renderPost = post => {
     return (
       <View style={{ flex: 1, marginHorizontal: 18 }}>
         <View style={{ flexDirection: 'column' }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={changeCurrentFlag}>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
               <Text style={{ paddingBottom: 15, paddingRight: 30 }}>{post.flag}</Text>
               <Text style={{ flex: 1, fontSize: 16, fontWeight: '500', paddingBottom: 15 }}>{post.name}</Text>
@@ -30,7 +40,7 @@ const App = () => {
         <Text style={{ paddingBottom: 30, fontSize: 24, fontWeight: "500" }}>Phone number</Text>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flexDirection: 'row', marginTop: 12, marginRight: 10 }}>
-            <Text style={{ marginRight: 10, marginTop: 10 }}>{<CountryFlag isoCode="NG" size={14} />}</Text>
+            <Text style={{ marginRight: 10, marginTop: 10 }}>{currentFlag}</Text>
             <TouchableOpacity onPress={() => this.RBSheet.open()}>
               <Icon name='chevron-down-outline' size={26} />
             </TouchableOpacity>
