@@ -13,7 +13,7 @@ function App () {
   });
 
   function changeCurrentFlag(){
-    for(let i = 0; i <= info.length; i++ ){
+    for(let i = 0; i < info.length; i++){
       setCurrentFlag(info[i].flag)
     }
   }
