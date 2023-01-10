@@ -13,8 +13,13 @@ function App () {
   });
 
   function changeCurrentFlag(){
+    let selectedCountry = ''
     for(let i = 0; i < info.length; i++){
-      setCurrentFlag(info[i].flag)
+      if(info[i].flag == selectedCountry){
+        return setCurrentFlag(info[i][flag])
+      } else{
+          console.log("Flag not found")
+      }
     }
   }
 
