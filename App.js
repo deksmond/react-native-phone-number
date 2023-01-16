@@ -16,7 +16,7 @@ function App () {
     let selectedCountry = ''
     for(let i = 0; i < info.length; i++){
       if(info[i].flag == selectedCountry){
-        return setCurrentFlag(info[i][flag])
+        return setCurrentFlag(info[i][flag][i])
       } else{
           console.log("Flag not found")
       }
