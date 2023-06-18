@@ -1,20 +1,22 @@
 import React, { useState} from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList, Platform } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, TextInput, FlatList, 
+  Platform } from 'react-native';
 import info from './info';
 import CountryFlag from 'react-native-country-flag';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import Icon from 'react-native-vector-icons/Ionicons';
+import RNShake from 'react-native-shake';
 //import { FlashList } from '@shopify/flash-list';
 
-function App () {
+function App() {
 
   const [currentFlag, setCurrentFlag] = useState(() => {
     return <CountryFlag isoCode="NG" size={20} />
   });
 
-  function changeCurrentFlag(){
-    for(let i = 20; i <= info.length; i++){
-        return setCurrentFlag(info[i].flag)
+  function changeCurrentFlag() {
+    for (let i = 0; i <= info.length; i++) {
+      return setCurrentFlag(info[i].flag)
     }
   }
 
@@ -25,7 +27,8 @@ function App () {
           <TouchableOpacity onPress={changeCurrentFlag}>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
               <Text style={{ paddingBottom: 15, paddingRight: 30 }}>{post.flag}</Text>
-              <Text style={{ flex: 1, fontSize: 16, fontWeight: '500', paddingBottom: 15 }}>{post.name}</Text>
+              <Text style={{ flex: 1, fontSize: 16, fontWeight: '500', paddingBottom: 15 }}>
+                {post.name}</Text>
               <Text style={{ paddingBottom: 15, fontWeight: '500' }}>{post.dialCode}</Text>
             </View>
           </TouchableOpacity>
@@ -37,12 +40,14 @@ function App () {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <View style={{ marginHorizontal: 15 }}>
-        <Text style={{ paddingBottom: 30, fontSize: 24, fontWeight: "500" }}>Phone number</Text>
+        <Text style={{ paddingBottom: 30, fontSize: 24, fontWeight: "500" }}>
+          Phone number
+        </Text>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flexDirection: 'row', marginTop: 12, marginRight: 10 }}>
             <Text style={{ marginRight: 10, marginTop: 10 }}>{currentFlag}</Text>
             <TouchableOpacity onPress={() => this.RBSheet.open()}>
-              <Icon name='chevron-down-outline' size={26} />
+              <Icon name='chevron-down-outline' size={26} color={'#2B50AA'} />
             </TouchableOpacity>
           </View>
           <View style={styles.numberInput}>
@@ -54,8 +59,11 @@ function App () {
             />
           </View>
           <TouchableOpacity style={{ flex: 2 }}>
-            <View style={{ height: 40, backgroundColor: '#fff', borderWidth: 1, borderRadius: 10, justifyContent: 'center' }}>
-              <Text style={{ textAlign: 'center', color: '#000', fontWeight: 'bold' }}>Submit</Text>
+            <View style={{ height: 40, backgroundColor: '#fff', borderWidth: 1, 
+            borderRadius: 10, justifyContent: 'center' }}>
+              <Text style={{ textAlign: 'center', color: '#000', fontWeight: 'bold' }}>
+                Submit
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -75,7 +83,8 @@ function App () {
         }}
       >
         <View>
-          <Text style={{ fontSize: 17, fontWeight: '700', paddingTop: 20, textAlign: 'center', justifyContent: 'center' }}>Select your country</Text>
+          <Text style={{ fontSize: 17, fontWeight: '700', paddingTop: 20, 
+          textAlign: 'center', justifyContent: 'center' }}>Select your country</Text>
         </View>
         <View style={{ borderBottomWidth: StyleSheet.hairlineWidth, marginTop: 10 }}></View>
 
